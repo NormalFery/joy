@@ -7,17 +7,40 @@ import gay.pridecraft.joy.fabric.entity.SpawnModifier;
 import gay.pridecraft.joy.registry.JoyAxolotlVariants;
 import gay.pridecraft.joy.registry.JoyEntities;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnGroup;
+import net.minecraft.entity.SpawnLocationTypes;
+import net.minecraft.entity.SpawnRestriction;
+import net.minecraft.entity.mob.SlimeEntity;
 import net.minecraft.entity.passive.BeeEntity;
 import net.minecraft.entity.passive.FoxEntity;
 import net.minecraft.entity.passive.FrogEntity;
 import net.minecraft.entity.passive.SnifferEntity;
+import net.minecraft.world.Heightmap;
 
 public class Joy implements ModInitializer {
     public static final String MOD_ID = "joy";
 
     @Override
     public void onInitialize() {
+        // i'm sorry, i don't know how to do this in any other way :sob: -Fery
+        SpawnRestriction.register(
+            JoyEntities.PRIDE_SLIME,
+            SpawnLocationTypes.ON_GROUND,
+            Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
+            (type, world, spawnReason, pos, random) -> SlimeEntity.canSpawn((EntityType<SlimeEntity>)(EntityType<?>)type, world, spawnReason, pos, random)
+        );
+        BiomeModifications.addSpawn(
+            BiomeSelectors.foundInOverworld(),
+            SpawnGroup.MONSTER,
+            JoyEntities.PRIDE_SLIME,
+            100,
+            1,
+            4
+        );
         Pivot.init();
         JoyAxolotlVariants.init();
         if (Config.mobSpawning) SpawnModifier.modifySpawning();
