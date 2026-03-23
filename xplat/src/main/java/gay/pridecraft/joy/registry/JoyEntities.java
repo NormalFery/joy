@@ -2,10 +2,7 @@ package gay.pridecraft.joy.registry;
 
 import gay.pridecraft.joy.JoyUtil;
 import gay.pridecraft.joy.Pivot;
-import gay.pridecraft.joy.entity.CustomBeeEntity;
-import gay.pridecraft.joy.entity.CustomFoxEntity;
-import gay.pridecraft.joy.entity.CustomFrogEntity;
-import gay.pridecraft.joy.entity.CustomSnifferEntity;
+import gay.pridecraft.joy.entity.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.registry.RegistryKeys;
@@ -53,6 +50,12 @@ public final class JoyEntities {
             .dimensions(1.9F, 1.75F)
             .maxTrackingRange(10)
     );
+
+    public static final EntityType<CustomSlimeEntity.PrideSlimeEntity> PRIDE_SLIME = register("pride_slime",
+        EntityType.Builder.create(CustomSlimeEntity.PrideSlimeEntity::new, EntityType.SLIME.getSpawnGroup())
+            .dimensions(0.52F, 0.52F)
+            .maxTrackingRange(10)
+            .eyeHeight(0.325F));
 
     private static <T extends Entity> EntityType<T> register(String id, EntityType.Builder<T> builder) {
         return Pivot.INSTANCE.register(RegistryKeys.ENTITY_TYPE, id, builder.build(JoyUtil.id + ':' + id));

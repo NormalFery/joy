@@ -76,6 +76,13 @@ public final class JoyItems {
         new SpawnEggItem(
             JoyEntities.SNIFFER, 0x871E09, 0xFF80BF, new Item.Settings())
     );
+
+    public static final Item PRIDE_SLIME_EGG = registerItem(
+        "pride_slime_spawn_egg",
+        new SpawnEggItem(
+            JoyEntities.PRIDE_SLIME, 0x871E09, 0xFF80BF, new Item.Settings()
+        )
+    );
     // endregion
 
     // region bundles

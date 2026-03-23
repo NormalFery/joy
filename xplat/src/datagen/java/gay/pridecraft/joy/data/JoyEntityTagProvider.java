@@ -58,7 +58,8 @@ public class JoyEntityTagProvider extends FabricTagProvider.EntityTypeTagProvide
             .add(
                 JoyEntities.FROG,
                 JoyEntities.SNIFFER,
-                JoyEntities.SOCK_FOX
+                JoyEntities.SOCK_FOX,
+                JoyEntities.PRIDE_SLIME
             );
     }
 }

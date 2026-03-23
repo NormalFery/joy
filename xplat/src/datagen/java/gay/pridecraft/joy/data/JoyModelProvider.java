@@ -198,6 +198,7 @@ public class JoyModelProvider extends FabricModelProvider {
         gen.register(JoyItems.TRANS_BEE_SPAWN_EGG, TEMPLATE_SPAWN_EGG);
         gen.register(JoyItems.FROG_SPAWN_EGG, TEMPLATE_SPAWN_EGG);
         gen.register(JoyItems.SNIFFER_SPAWN_EGG, TEMPLATE_SPAWN_EGG);
+        gen.register(JoyItems.PRIDE_SLIME_EGG, TEMPLATE_SPAWN_EGG);
         gen.register(JoyItems.DOUGLAS_DISC, Models.GENERATED);
         gen.register(JoyItems.MELANCOLIE_DISC, Models.GENERATED);
     }

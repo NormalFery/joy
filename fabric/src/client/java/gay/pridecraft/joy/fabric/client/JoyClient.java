@@ -9,10 +9,7 @@ import gay.pridecraft.joy.registry.JoyBlocks;
 import gay.pridecraft.joy.registry.JoyEntities;
 import gay.pridecraft.joy.registry.JoyParticles;
 import gay.pridecraft.joy.render.JoyBedBlockEntityRenderer;
-import gay.pridecraft.joy.render.entity.FrogRenderer;
-import gay.pridecraft.joy.render.entity.PrideSnifferRenderer;
-import gay.pridecraft.joy.render.entity.SockFoxRenderer;
-import gay.pridecraft.joy.render.entity.TreeRenderer;
+import gay.pridecraft.joy.render.entity.*;
 import gay.pridecraft.joy.render.feature.CustomElytraFeatureRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
@@ -102,5 +99,6 @@ public class JoyClient implements ClientModInitializer {
         EntityRendererRegistry.register(JoyEntities.TREE, TreeRenderer.factory("tree"));
         EntityRendererRegistry.register(JoyEntities.FROG, FrogRenderer::new);
         EntityRendererRegistry.register(JoyEntities.SNIFFER, PrideSnifferRenderer::new);
+        EntityRendererRegistry.register(JoyEntities.PRIDE_SLIME, PrideSlimeRenderer::new);
     }
 }

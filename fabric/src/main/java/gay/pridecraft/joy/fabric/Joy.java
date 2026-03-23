@@ -2,11 +2,13 @@ package gay.pridecraft.joy.fabric;
 
 import gay.pridecraft.joy.Pivot;
 import gay.pridecraft.joy.config.Config;
+import gay.pridecraft.joy.entity.CustomSlimeEntity;
 import gay.pridecraft.joy.fabric.entity.SpawnModifier;
 import gay.pridecraft.joy.registry.JoyAxolotlVariants;
 import gay.pridecraft.joy.registry.JoyEntities;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.minecraft.entity.mob.SlimeEntity;
 import net.minecraft.entity.passive.BeeEntity;
 import net.minecraft.entity.passive.FoxEntity;
 import net.minecraft.entity.passive.FrogEntity;
@@ -38,5 +40,6 @@ public class Joy implements ModInitializer {
         FabricDefaultAttributeRegistry.register(JoyEntities.FROG, FrogEntity.createFrogAttributes());
 
         FabricDefaultAttributeRegistry.register(JoyEntities.SNIFFER, SnifferEntity.createSnifferAttributes());
+        FabricDefaultAttributeRegistry.register(JoyEntities.PRIDE_SLIME, CustomSlimeEntity.PrideSlimeEntity.createPrideSlimeAttributes().build());
     }
 }
