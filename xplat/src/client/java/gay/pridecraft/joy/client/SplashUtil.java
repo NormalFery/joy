@@ -44,6 +44,7 @@ public final class SplashUtil {
         putBirthday(MAR, 18, "TheClashFruit");
         putBirthday(SEP, 14, "Blurry");
         putBirthday(NOV, 8, "Fery");
+        putBirthday(MAR, 1, "Fátima");
     }
 
     private static List<String> makeContributors() {

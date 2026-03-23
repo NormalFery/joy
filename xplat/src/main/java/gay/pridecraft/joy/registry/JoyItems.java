@@ -3,7 +3,6 @@ package gay.pridecraft.joy.registry;
 
 import gay.pridecraft.joy.JoyUtil;
 import gay.pridecraft.joy.Pivot;
-import gay.pridecraft.joy.entity.CustomSlimeEntity;
 import gay.pridecraft.joy.entity.PrideSlimeVariant;
 import gay.pridecraft.joy.item.CustomElytraItem;
 import gay.pridecraft.joy.item.ParticleEmittingItem;
@@ -14,8 +13,6 @@ import net.minecraft.item.BrushItem;
 import net.minecraft.item.BundleItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.SpawnEggItem;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Rarity;

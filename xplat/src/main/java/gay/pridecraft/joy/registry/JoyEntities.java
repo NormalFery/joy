@@ -51,8 +51,8 @@ public final class JoyEntities {
             .maxTrackingRange(10)
     );
 
-    public static final EntityType<CustomSlimeEntity.PrideSlimeEntity> PRIDE_SLIME = register("pride_slime",
-        EntityType.Builder.create(CustomSlimeEntity.PrideSlimeEntity::new, EntityType.SLIME.getSpawnGroup())
+    public static final EntityType<PrideSlimeEntity> PRIDE_SLIME = register("pride_slime",
+        EntityType.Builder.create(PrideSlimeEntity::new, EntityType.SLIME.getSpawnGroup())
             .dimensions(0.52F, 0.52F)
             .maxTrackingRange(10)
             .eyeHeight(0.325F));

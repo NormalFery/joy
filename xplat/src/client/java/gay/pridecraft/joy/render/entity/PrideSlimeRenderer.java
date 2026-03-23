@@ -1,7 +1,7 @@
 package gay.pridecraft.joy.render.entity;
 
 import gay.pridecraft.joy.JoyUtil;
-import gay.pridecraft.joy.entity.CustomSlimeEntity;
+import gay.pridecraft.joy.entity.PrideSlimeEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
@@ -12,7 +12,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 
-public class PrideSlimeRenderer extends MobEntityRenderer<CustomSlimeEntity.PrideSlimeEntity, SlimeEntityModel<CustomSlimeEntity.PrideSlimeEntity>> {
+public class PrideSlimeRenderer extends MobEntityRenderer<PrideSlimeEntity, SlimeEntityModel<PrideSlimeEntity>> {
 
     private static final Identifier TEXTURE = JoyUtil.id("textures/entity/slime/slime_gay.png");
 
@@ -23,13 +23,13 @@ public class PrideSlimeRenderer extends MobEntityRenderer<CustomSlimeEntity.Prid
     }
 
     @Override
-    public void render(CustomSlimeEntity.PrideSlimeEntity entity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i) {
+    public void render(PrideSlimeEntity entity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i) {
         this.shadowRadius = 0.25F * (float) entity.getSize();
         super.render(entity, f, g, matrixStack, vertexConsumerProvider, i);
     }
 
     @Override
-    protected void scale(CustomSlimeEntity.PrideSlimeEntity entity, MatrixStack matrixStack, float f) {
+    protected void scale(PrideSlimeEntity entity, MatrixStack matrixStack, float f) {
         float g = 0.999F;
         matrixStack.scale(0.999F, 0.999F, 0.999F);
         matrixStack.translate(0.0F, 0.001F, 0.0F);
@@ -40,7 +40,7 @@ public class PrideSlimeRenderer extends MobEntityRenderer<CustomSlimeEntity.Prid
     }
 
     @Override
-    public Identifier getTexture(CustomSlimeEntity.PrideSlimeEntity entity) {
+    public Identifier getTexture(PrideSlimeEntity entity) {
         return entity.getVariant().getTexture();
     }
 
