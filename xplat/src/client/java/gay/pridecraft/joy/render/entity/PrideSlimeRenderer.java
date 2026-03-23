@@ -41,7 +41,7 @@ public class PrideSlimeRenderer extends MobEntityRenderer<CustomSlimeEntity.Prid
 
     @Override
     public Identifier getTexture(CustomSlimeEntity.PrideSlimeEntity entity) {
-        return TEXTURE;
+        return entity.getVariant().getTexture();
     }
 
 }

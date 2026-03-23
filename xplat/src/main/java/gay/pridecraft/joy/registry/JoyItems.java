@@ -3,6 +3,8 @@ package gay.pridecraft.joy.registry;
 
 import gay.pridecraft.joy.JoyUtil;
 import gay.pridecraft.joy.Pivot;
+import gay.pridecraft.joy.entity.CustomSlimeEntity;
+import gay.pridecraft.joy.entity.PrideSlimeVariant;
 import gay.pridecraft.joy.item.CustomElytraItem;
 import gay.pridecraft.joy.item.ParticleEmittingItem;
 import gay.pridecraft.joy.item.PrideDyeItem;
@@ -12,11 +14,15 @@ import net.minecraft.item.BrushItem;
 import net.minecraft.item.BundleItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.SpawnEggItem;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Rarity;
 
+import java.util.EnumMap;
 import java.util.List;
+import java.util.Map;
 
 public final class JoyItems {
     public static final Item PRIDE_ELYTRA = registerItem(
@@ -225,6 +231,44 @@ public final class JoyItems {
 
     // endregion
 
+
+    public static final Item
+        QUEER_BALL = registerSlimeBall("slime_ball_queer"),
+        GAY_BALL = registerSlimeBall("slime_ball_gay"),
+        ENBY_BALL = registerSlimeBall("slime_ball_enby"),
+        INTERSEX_BALL = registerSlimeBall("slime_ball_intersex"),
+        AGENDER_BALL = registerSlimeBall("slime_ball_agender"),
+        BIGENDER_BALL = registerSlimeBall("slime_ball_bigender"),
+        BISEXUAL_BALL = registerSlimeBall("slime_ball_bisexual"),
+        MLM_BALL = registerSlimeBall("slime_ball_mlm"),
+        ARO_BALL = registerSlimeBall("slime_ball_aro"),
+        ACE_BALL = registerSlimeBall("slime_ball_ace"),
+        APLATONIC_BALL = registerSlimeBall("slime_ball_aplatonic"),
+        GENDERFLUID_BALL = registerSlimeBall("slime_ball_genderfluid"),
+        PAN_BALL = registerSlimeBall("slime_ball_pan"),
+        TRANS_BALL = registerSlimeBall("slime_ball_trans"),
+        AROACE_BALL = registerSlimeBall("slime_ball_aroace"),
+        LESBIAN_BALL = registerSlimeBall("slime_ball_lesbian");
+
+    public static final Map<PrideSlimeVariant, Item> SLIME_BALLS = new EnumMap<>(PrideSlimeVariant.class) {{
+        put(PrideSlimeVariant.GAY, registerSlimeBall("slime_ball_gay"));
+        put(PrideSlimeVariant.LESBIAN, registerSlimeBall("slime_ball_lesbian"));
+        put(PrideSlimeVariant.BISEXUAL, registerSlimeBall("slime_ball_bisexual"));
+        put(PrideSlimeVariant.TRANS, registerSlimeBall("slime_ball_trans"));
+        put(PrideSlimeVariant.AGENDER, registerSlimeBall("slime_ball_agender"));
+        put(PrideSlimeVariant.APLATONIC, registerSlimeBall("slime_ball_aplatonic"));
+        put(PrideSlimeVariant.AROACE, registerSlimeBall("slime_ball_aroace"));
+        put(PrideSlimeVariant.ARO, registerSlimeBall("slime_ball_aro"));
+        put(PrideSlimeVariant.ACE, registerSlimeBall("slime_ball_ace"));
+        put(PrideSlimeVariant.BIGENDER, registerSlimeBall("slime_ball_bigender"));
+        put(PrideSlimeVariant.GENDERFLUID, registerSlimeBall("slime_ball_genderfluid"));
+        put(PrideSlimeVariant.INTERSEX, registerSlimeBall("slime_ball_intersex"));
+        put(PrideSlimeVariant.MLM, registerSlimeBall("slime_ball_mlm"));
+        put(PrideSlimeVariant.ENBY, registerSlimeBall("slime_ball_enby"));
+        put(PrideSlimeVariant.PAN, registerSlimeBall("slime_ball_pan"));
+        put(PrideSlimeVariant.QUEER, registerSlimeBall("slime_ball_queer"));
+    }};
+
     // Currently inaccessible, only exists to serve as an example.
     public static final Item
         DOUGLAS_DISC = registerDisc("douglas"),
@@ -245,6 +289,11 @@ public final class JoyItems {
     private static Item registerItem(String name, Item item) {
         return Pivot.INSTANCE.register(RegistryKeys.ITEM, name, item);
     }
+
+    private static Item registerSlimeBall(String name) {
+        return registerItem(name, new PrideDyeItem(new Item.Settings())); // does this imply that slime balls are dyes? Mayyybe
+    }
+
 
     /**
      * Workaround to force classloading

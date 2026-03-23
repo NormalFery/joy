@@ -139,6 +139,8 @@ public final class JoyItemGroups {
             entries.add(Items.BLACK_DYE);
             JoyItems.PRIDE_DYES.forEach(entries::add);
         });
+    public static final ItemGroup JOY_SLIME = register("slime_things", JoyItems.GAY_BALL::getDefaultStack,
+        (ctx, entries) -> {JoyItems.SLIME_BALLS.values().forEach(entries::add);});
 
     private static ItemGroup register(String name, Supplier<ItemStack> icon, ItemGroup.EntryCollector collector) {
         return Pivot.INSTANCE.register(RegistryKeys.ITEM_GROUP, name, Pivot.itemGroupBuilder()

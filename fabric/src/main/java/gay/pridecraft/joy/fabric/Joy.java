@@ -6,6 +6,7 @@ import gay.pridecraft.joy.entity.CustomSlimeEntity;
 import gay.pridecraft.joy.fabric.entity.SpawnModifier;
 import gay.pridecraft.joy.registry.JoyAxolotlVariants;
 import gay.pridecraft.joy.registry.JoyEntities;
+import gay.pridecraft.joy.registry.JoyItems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.entity.mob.SlimeEntity;
@@ -21,7 +22,6 @@ public class Joy implements ModInitializer {
     public void onInitialize() {
         Pivot.init();
         JoyAxolotlVariants.init();
-
         if (Config.mobSpawning) SpawnModifier.modifySpawning();
 
         // MidnightConfig.init(Joy.MOD_ID, Config.class);
