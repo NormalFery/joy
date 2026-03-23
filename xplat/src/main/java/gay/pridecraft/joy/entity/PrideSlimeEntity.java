@@ -2,6 +2,8 @@ package gay.pridecraft.joy.entity;
 
 import gay.pridecraft.joy.JoyUtil;
 import gay.pridecraft.joy.registry.JoyEntities;
+import gay.pridecraft.joy.registry.JoyItems;
+import gay.pridecraft.joy.registry.JoyParticles;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
@@ -12,11 +14,18 @@ import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.SlimeEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.loot.LootTable;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.nbt.NbtString;
+import net.minecraft.particle.ItemStackParticleEffect;
+import net.minecraft.particle.ParticleEffect;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.particle.SimpleParticleType;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.text.Text;
@@ -97,8 +106,8 @@ public class PrideSlimeEntity extends SlimeEntity {
             int k = 2 + this.random.nextInt(3);
 
             for (int l = 0; l < k; ++l) {
-                float h = ((float)(l % 2) - 0.5F) * g;
-                float m = ((float)(l / 2) - 0.5F) * g;
+                float h = ((float) (l % 2) - 0.5F) * g;
+                float m = ((float) (l / 2) - 0.5F) * g;
                 PrideSlimeEntity child = JoyEntities.PRIDE_SLIME.create(this.getWorld());
                 if (child != null) {
                     if (this.isPersistent()) child.setPersistent();
@@ -115,6 +124,12 @@ public class PrideSlimeEntity extends SlimeEntity {
             }
         }
         super.remove(reason);
+    }
+
+
+    @Override
+    protected ParticleEffect getParticles() {
+        return new ItemStackParticleEffect(ParticleTypes.ITEM, new ItemStack(JoyItems.SLIME_BALLS.get(this.getVariant())));
     }
 
     @Override
