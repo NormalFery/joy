@@ -7,45 +7,7 @@ import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
 
-import static gay.pridecraft.joy.registry.JoyBlocks.ACE_CANDLE;
-import static gay.pridecraft.joy.registry.JoyBlocks.ACE_CANDLE_CAKE;
-import static gay.pridecraft.joy.registry.JoyBlocks.AGENDER_CANDLE;
-import static gay.pridecraft.joy.registry.JoyBlocks.AGENDER_CANDLE_CAKE;
-import static gay.pridecraft.joy.registry.JoyBlocks.APLATONIC_CANDLE;
-import static gay.pridecraft.joy.registry.JoyBlocks.APLATONIC_CANDLE_CAKE;
-import static gay.pridecraft.joy.registry.JoyBlocks.AROACE_CANDLE;
-import static gay.pridecraft.joy.registry.JoyBlocks.AROACE_CANDLE_CAKE;
-import static gay.pridecraft.joy.registry.JoyBlocks.ARO_CANDLE;
-import static gay.pridecraft.joy.registry.JoyBlocks.ARO_CANDLE_CAKE;
-import static gay.pridecraft.joy.registry.JoyBlocks.BEDS;
-import static gay.pridecraft.joy.registry.JoyBlocks.BIGENDER_CANDLE;
-import static gay.pridecraft.joy.registry.JoyBlocks.BIGENDER_CANDLE_CAKE;
-import static gay.pridecraft.joy.registry.JoyBlocks.BISEXUAL_CANDLE;
-import static gay.pridecraft.joy.registry.JoyBlocks.BISEXUAL_CANDLE_CAKE;
-import static gay.pridecraft.joy.registry.JoyBlocks.CANDLES;
-import static gay.pridecraft.joy.registry.JoyBlocks.ENBY_CANDLE;
-import static gay.pridecraft.joy.registry.JoyBlocks.ENBY_CANDLE_CAKE;
-import static gay.pridecraft.joy.registry.JoyBlocks.GAY_CANDLE;
-import static gay.pridecraft.joy.registry.JoyBlocks.GAY_CANDLE_CAKE;
-import static gay.pridecraft.joy.registry.JoyBlocks.GENDERFLUID_CANDLE;
-import static gay.pridecraft.joy.registry.JoyBlocks.GENDERFLUID_CANDLE_CAKE;
-import static gay.pridecraft.joy.registry.JoyBlocks.INTERSEX_CANDLE;
-import static gay.pridecraft.joy.registry.JoyBlocks.INTERSEX_CANDLE_CAKE;
-import static gay.pridecraft.joy.registry.JoyBlocks.LESBIAN_CANDLE;
-import static gay.pridecraft.joy.registry.JoyBlocks.LESBIAN_CANDLE_CAKE;
-import static gay.pridecraft.joy.registry.JoyBlocks.MLM_CANDLE;
-import static gay.pridecraft.joy.registry.JoyBlocks.MLM_CANDLE_CAKE;
-import static gay.pridecraft.joy.registry.JoyBlocks.PAN_CANDLE;
-import static gay.pridecraft.joy.registry.JoyBlocks.PAN_CANDLE_CAKE;
-import static gay.pridecraft.joy.registry.JoyBlocks.PLANTS;
-import static gay.pridecraft.joy.registry.JoyBlocks.POTTED_PLANTS;
-import static gay.pridecraft.joy.registry.JoyBlocks.PRIDE_CAKE;
-import static gay.pridecraft.joy.registry.JoyBlocks.PROGRESS_CANDLE;
-import static gay.pridecraft.joy.registry.JoyBlocks.PROGRESS_CANDLE_CAKE;
-import static gay.pridecraft.joy.registry.JoyBlocks.QUEER_CANDLE;
-import static gay.pridecraft.joy.registry.JoyBlocks.QUEER_CANDLE_CAKE;
-import static gay.pridecraft.joy.registry.JoyBlocks.TRANS_CANDLE;
-import static gay.pridecraft.joy.registry.JoyBlocks.TRANS_CANDLE_CAKE;
+import static gay.pridecraft.joy.registry.JoyBlocks.*;
 
 /**
  * @author Ampflower
@@ -81,6 +43,7 @@ public class JoyBlockLootProvider extends FabricBlockLootTableProvider {
 
         PLANTS.forEach(this::addDrop);
         POTTED_PLANTS.forEach(this::addPottedPlantDrops);
+        SLIME_BLOCKS.values().forEach(this::addDrop);
 
         addDrop(BlahajBlocks.BLAHAJ_BLOCK);
         addDrop(BlahajBlocks.BLAVINGAD_BLOCK);

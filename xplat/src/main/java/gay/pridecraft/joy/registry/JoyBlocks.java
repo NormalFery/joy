@@ -2,20 +2,17 @@ package gay.pridecraft.joy.registry;
 
 import gay.pridecraft.joy.Pivot;
 import gay.pridecraft.joy.block.JoyBedBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.CakeBlock;
-import net.minecraft.block.CandleBlock;
-import net.minecraft.block.CandleCakeBlock;
-import net.minecraft.block.FlowerBlock;
-import net.minecraft.block.FlowerPotBlock;
+import gay.pridecraft.joy.entity.PrideSlimeVariant;
+import net.minecraft.block.*;
 import net.minecraft.item.BedItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryKeys;
 
+import java.util.EnumMap;
 import java.util.List;
+import java.util.Map;
 
 import static net.minecraft.block.AbstractBlock.Settings.copy;
 
@@ -155,6 +152,30 @@ public final class JoyBlocks {
         return registerBlock(name, new CandleCakeBlock(candle, copy(Blocks.CANDLE_CAKE)));
     }
     // endregion
+
+    // region SlimeBlocks
+    public static final Map<PrideSlimeVariant, Block> SLIME_BLOCKS = new EnumMap<>(PrideSlimeVariant.class) {{
+        put(PrideSlimeVariant.GAY, registerSlimeBlock("slime_block_gay"));
+        put(PrideSlimeVariant.LESBIAN, registerSlimeBlock("slime_block_lesbian"));
+        put(PrideSlimeVariant.BISEXUAL, registerSlimeBlock("slime_block_bisexual"));
+        put(PrideSlimeVariant.TRANS, registerSlimeBlock("slime_block_trans"));
+        put(PrideSlimeVariant.AGENDER, registerSlimeBlock("slime_block_agender"));
+        put(PrideSlimeVariant.APLATONIC, registerSlimeBlock("slime_block_aplatonic"));
+        put(PrideSlimeVariant.AROACE, registerSlimeBlock("slime_block_aroace"));
+        put(PrideSlimeVariant.ARO, registerSlimeBlock("slime_block_aro"));
+        put(PrideSlimeVariant.ACE, registerSlimeBlock("slime_block_ace"));
+        put(PrideSlimeVariant.BIGENDER, registerSlimeBlock("slime_block_bigender"));
+        put(PrideSlimeVariant.GENDERFLUID, registerSlimeBlock("slime_block_genderfluid"));
+        put(PrideSlimeVariant.INTERSEX, registerSlimeBlock("slime_block_intersex"));
+        put(PrideSlimeVariant.MLM, registerSlimeBlock("slime_block_mlm"));
+        put(PrideSlimeVariant.ENBY, registerSlimeBlock("slime_block_enby"));
+        put(PrideSlimeVariant.PAN, registerSlimeBlock("slime_block_pan"));
+        put(PrideSlimeVariant.QUEER, registerSlimeBlock("slime_block_queer"));
+    }};
+
+    private static Block registerSlimeBlock(String name) {
+        return registerBlock(name, new SlimeBlock(copy(Blocks.SLIME_BLOCK)));
+    }
 
     public static final Block PRIDE_CAKE = registerBlock("pride_cake",
         new CakeBlock(copy(Blocks.CAKE)));

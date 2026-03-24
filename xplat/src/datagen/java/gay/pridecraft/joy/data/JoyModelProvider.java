@@ -76,6 +76,9 @@ public class JoyModelProvider extends FabricModelProvider {
         }
         registerShark(gen, BlahajBlocks.GRAY_SHARK_BLOCK, false);
         BlahajBlocks.PRIDE_BLOCKS.forEach(shark -> registerShark(gen, shark, true));
+
+        JoyBlocks.SLIME_BLOCKS.values().forEach(gen::registerSimpleState);
+
     }
 
     private static void registerShark(BlockStateModelGenerator gen, Block shark, boolean pride) {

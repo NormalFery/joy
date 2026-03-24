@@ -69,6 +69,10 @@ public class JoyClient implements ClientModInitializer {
         FabricUtil.registerEnabledPack("menu", Text.of("Joy's Main Menu & HUD"));
         FabricUtil.registerEnabledPack("glint", Text.of("Joy's Enchantment Glint"));
 
+        for (Block block : JoyBlocks.SLIME_BLOCKS.values()) {
+            BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getTranslucent());
+        }
+
         SplashUtil.init();
     }
 
@@ -101,4 +105,6 @@ public class JoyClient implements ClientModInitializer {
         EntityRendererRegistry.register(JoyEntities.SNIFFER, PrideSnifferRenderer::new);
         EntityRendererRegistry.register(JoyEntities.PRIDE_SLIME, PrideSlimeRenderer::new);
     }
+
+
 }
