@@ -2,7 +2,8 @@
   "parent": "block/block",
   "textures": {
     "particle": "joy:block/slime_block_trans",
-    "texture": "joy:block/slime_block_trans"
+    "texture": "joy:block/slime_block_trans",
+    "top": "joy:block/slime_block_trans_blue"
   },
   "elements": [
     {
@@ -24,7 +25,7 @@
             13,
             13
           ],
-          "texture": "#texture"
+          "texture": "#top"
         },
         "up": {
           "uv": [
@@ -33,7 +34,7 @@
             13,
             13
           ],
-          "texture": "#texture"
+          "texture": "#top"
         },
         "north": {
           "uv": [
@@ -92,7 +93,7 @@
             16,
             16
           ],
-          "texture": "#texture",
+          "texture": "#top",
           "cullface": "down"
         },
         "up": {
@@ -102,7 +103,7 @@
             16,
             16
           ],
-          "texture": "#texture",
+          "texture": "#top",
           "cullface": "up"
         },
         "north": {
