@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "joy:slime_block_bisexual"
+    }
+  ],
+  "result": {
+    "id": "joy:slime_ball_bisexual",
+    "count": 9
+  }
+}

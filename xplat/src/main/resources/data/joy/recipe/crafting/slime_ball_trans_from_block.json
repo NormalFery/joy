@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "joy:slime_block_trans"
+    }
+  ],
+  "result": {
+    "id": "joy:slime_ball_trans",
+    "count": 9
+  }
+}

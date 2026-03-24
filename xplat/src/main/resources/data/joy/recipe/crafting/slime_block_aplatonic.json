@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "joy:slime_ball_aplatonic"
+    }
+  },
+  "result": {
+    "id": "joy:slime_block_aplatonic",
+    "count": 1
+  }
+}

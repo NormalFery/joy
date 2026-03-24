@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "joy:slime_ball_queer"
+    }
+  },
+  "result": {
+    "id": "joy:slime_block_queer",
+    "count": 1
+  }
+}
